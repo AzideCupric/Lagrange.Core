@@ -2,13 +2,9 @@ name: Lagrange.OneBot Build
 
 on:
   push:
-    paths:
-      - "**.cs"
-    branches: ["master"]
+    branches: ["main"]
   pull_request:
-    branches: ["master"]
-    paths:
-      - "**.cs"
+    branches: ["main"]
 
   workflow_dispatch:
 
@@ -18,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        runtimeIdentifier: [ win-x64, win-x86, linux-x64, linux-arm, linux-arm64, osx-x64, osx-arm64 ]
+        runtimeIdentifier: [ win-x64, linux-x64, linux-arm64 ]
 
     steps:
       - name: Checkout repo
